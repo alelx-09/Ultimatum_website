@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ultimatum — Entertainment & Creator Funding</title>
+  <meta name="description" content="Ultimatum is an interactive entertainment platform where creators share videos, images, and livestreams. Viewers can optionally support creators through voluntary tips." />
+
+  <style>
+    :root{
+      --bg:#0b0b12;
+      --card:#111125;
+      --text:#e9e9f1;
+      --muted:#b9b9d0;
+      --accent:#ff3bd4;
+      --accent2:#6d5cff;
+      --border:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 10% 0%, rgba(109,92,255,.22), transparent 60%),
+                  radial-gradient(900px 550px at 90% 20%, rgba(255,59,212,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 80px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;margin-bottom:28px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      text-decoration:none;
+    }
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 10px 30px rgba(255,59,212,.15);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .brand strong{font-size:16px;letter-spacing:.2px}
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:13px;
+      padding:8px 10px;
+      border:1px solid transparent;
+      border-radius:999px;
+    }
+    nav a:hover{border-color:var(--border);color:var(--text)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:10px;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr}
+    }
+    .card{
+      background:rgba(17,17,37,.8);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:22px;
+      backdrop-filter: blur(8px);
+    }
+    h1{
+      font-size:40px;
+      line-height:1.05;
+      margin:0 0 12px 0;
+      letter-spacing:-.5px;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:15px;
+      margin:0 0 18px 0;
+      max-width:58ch;
+    }
+    .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .pill{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      transition: transform .12s ease;
+    }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#0b0b12;
+      box-shadow: 0 14px 40px rgba(109,92,255,.18);
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:14px;
+      margin-top:16px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    h2{margin:0 0 10px 0;font-size:18px}
+    p{margin:0 0 10px 0;color:var(--muted);font-size:14px}
+    ul{margin:10px 0 0 16px;color:var(--muted);font-size:14px}
+    li{margin:6px 0}
+    .section{margin-top:18px}
+    .tiny{font-size:12px;color:var(--muted)}
+    .divider{height:1px;background:var(--border);margin:18px 0}
+    footer{margin-top:26px}
+    .footgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:900px){.footgrid{grid-template-columns:1fr}}
+    .codebox{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      font-size:12px;
+      color:#d7d7ee;
+      background:rgba(0,0,0,.25);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+      overflow:auto;
+    }
+
+    /* Small footer links */
+    .footerLinks{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .footerLinks a{
+      color:var(--muted);
+      text-decoration:none;
+      border:1px solid var(--border);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      background:rgba(255,255,255,.03);
+    }
+    .footerLinks a:hover{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="Ultimatum home">
+        <div class="logo" aria-hidden="true"></div>
+        <strong>Ultimatum</strong>
+      </a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#payments">Payments</a>
+        <a href="#safety">Safety</a>
+        <a href="#contact">Contact</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section class="card">
+        <h1>Interactive entertainment<br/>with optional creator support.</h1>
+        <p class="sub">
+          Ultimatum is an entertainment platform where creators share videos, images, and livestreams.
+          Viewers can engage with content and optionally support creators through voluntary tips.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#payments">How payments work</a>
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="terms.html">Terms</a>
+        </div>
+
+        <div class="pillrow" aria-label="Key platform notes">
+          <span class="pill">No pay-to-enter</span>
+          <span class="pill">No wagering or gambling</span>
+          <span class="pill">No guaranteed prizes</span>
+          <span class="pill">Tips are optional</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="tiny">
+          Note: Ultimatum is in pre-launch / beta. Public links and app store pages will be added as they go live.
+        </p>
+      </section>
+
+      <aside class="card" id="overview">
+        <h2>What users can do</h2>
+        <ul>
+          <li>Watch and interact with entertainment content (videos, images, and livestreams).</li>
+          <li>Creators can post content and build an audience.</li>
+          <li>Viewers can optionally tip creators as a form of support.</li>
+          <li>Creators may post interactive prompts (“challenges”) as entertainment content (optional feature).</li>
+        </ul>
+
+        <div class="section">
+          <h2>What Ultimatum is not</h2>
+          <ul>
+            <li>Not a gambling or wagering product.</li>
+            <li>Not a pay-to-play or pay-to-enter contest system.</li>
+            <li>Not a platform that guarantees prize winnings.</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <!-- How it works -->
+    <section class="card section" id="how-it-works">
+      <h2>How it works</h2>
+      <p>
+        Ultimatum is built for interactive entertainment. Creators can upload content, go live, and optionally host
+        interactive experiences that viewers can watch and participate in.
+      </p>
+
+      <div class="grid" role="list">
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Create content</h2>
+          <ul>
+            <li>Upload a video or image, or start a livestream.</li>
+            <li>Add a title, description, and category (vlog, gaming, entertainment, etc.).</li>
+            <li>Share publicly to build an audience.</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Interactive prompts (“challenges”)</h2>
+          <ul>
+            <li>Creators can post interactive prompts as entertainment content.</li>
+            <li>Prompts can be live or time-limited.</li>
+            <li>Participants may submit content (photo/video/live) as part of participation.</li>
+            <li>No entry fees, no wagering, and no guaranteed prize outcomes.</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Geolocation (when enabled)</h2>
+          <ul>
+            <li>Some experiences may use location to confirm proximity (e.g., within a set radius).</li>
+            <li>If a user exits the allowed radius, access to that location-based experience may pause/end until they return.</li>
+            <li>Location is only required for enabled features and is not required for general browsing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid" role="list" style="margin-top:14px">
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Timers</h2>
+          <ul>
+            <li>Live experiences can include countdown timers visible to viewers and participants.</li>
+            <li>Timers help define start/end participation windows.</li>
+            <li>When time expires, the experience closes or transitions to review.</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Voting & polls</h2>
+          <ul>
+            <li>Creators can enable polls for audience interaction (choices, rankings, feedback).</li>
+            <li>Voting is for engagement and community input.</li>
+            <li>Polls are not used for wagering, betting, or prize-based entry systems.</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Optional support (tips)</h2>
+          <ul>
+            <li>Viewers can optionally tip creators to support content.</li>
+            <li>Tips are not required to watch, join, or participate.</li>
+            <li>Tips are voluntary support and not contingent on outcomes or “winning”.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="tiny" style="margin-top:12px">
+        Note: Feature availability can vary by region, device permissions, and user settings. Location-based experiences require permission when enabled.
+      </p>
+    </section>
+
+    <!-- Payments -->
+    <section class="card section" id="payments">
+      <h2>Payments and monetization</h2>
+      <p>
+        Payments processed through this account are used for <strong>voluntary tips</strong> and <strong>creator support</strong>.
+        Users are never required to pay to access content, view livestreams, or participate in entertainment experiences.
+      </p>
+
+      <div class="grid" role="list">
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>What customers pay for</h2>
+          <ul>
+            <li>Optional tips to support creators.</li>
+            <li>Optional contributions to support creator content.</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>What customers do not pay for</h2>
+          <ul>
+            <li>No pay-to-watch or pay-to-view.</li>
+            <li>No entry fees to participate.</li>
+            <li>No wagers, bets, or prize pool buy-ins.</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Payment flow (simple)</h2>
+          <div class="codebox">
+Viewer → (optional tip) → Creator
+<br/>
+Platform may take a service fee for processing & platform operations.
+          </div>
+          <p class="tiny" style="margin-top:10px">
+            Tips are discretionary support and are not contingent on outcomes, performance, or “winning”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section class="card section" id="safety">
+      <h2>Safety and restricted content</h2>
+      <p>
+        Ultimatum enforces content guidelines and prohibits illegal activity, pornography/explicit sexual content, and any form of gambling or wagering.
+        We reserve the right to remove content and suspend accounts that violate policies.
+      </p>
+
+      <div class="grid" role="list">
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Prohibited</h2>
+          <ul>
+            <li>Pornography and explicit sexual content</li>
+            <li>Gambling, wagering, betting, prize-based entry systems, or pay-to-enter competitions</li>
+            <li>Illegal, dangerous, or harmful content</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Moderation</h2>
+          <ul>
+            <li>Community reporting tools</li>
+            <li>Content review and enforcement</li>
+            <li>Account restrictions for violations</li>
+          </ul>
+        </div>
+
+        <div class="card" role="listitem" style="padding:16px;border-radius:16px;background:rgba(255,255,255,.03)">
+          <h2>Age / compliance</h2>
+          <ul>
+            <li>Age-appropriate access rules (as applicable)</li>
+            <li>Clear platform rules and user guidelines</li>
+            <li>Payment activity monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="card section" id="contact">
+      <h2>Contact</h2>
+      <p>
+        For questions about Ultimatum, payments, business operations, or compliance, please contact us:
+      </p>
+      <div class="codebox">
+Business Name: Innovision LLC
+Platform: Ultimatum
+Email: support@ultimatum.com
+      </div>
+      <p class="tiny" style="margin-top:10px">
+        Innovision LLC is the legal owner and operator of the Ultimatum platform.
+      </p>
+    </section>
+
+    <!-- Terms -->
+    <section class="card section" id="terms">
+      <h2>Terms and policies</h2>
+      <p>
+        Review our full Terms of Service here:
+      </p>
+      <div class="footerLinks">
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <p class="tiny" style="margin-top:10px">
+        The Platform prohibits gambling/wagering, pornography/explicit sexual content, and pay-to-enter mechanics.
+      </p>
+    </section>
+
+    <footer class="card">
+      <div class="footgrid">
+        <div>
+          <h2>For payment processor review</h2>
+          <p>
+            This page describes the products and services offered and the payment flow:
+            voluntary tipping / creator support for entertainment content.
+          </p>
+          <div class="footerLinks">
+            <a href="terms.html">Terms of Service</a>
+          </div>
+          <p class="tiny" style="margin-top:10px">
+            © 2026 Innovision LLC. All rights reserved.
+          </p>
+        </div>
+
+        <div>
+          <h2>Social media</h2>
+          <p class="tiny">Add links below when available:</p>
+          <div class="codebox">
+
+TikTok: https://www.tiktok.com/@playultimatum6?_r=1&_t=ZT-940id0ujIas
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
