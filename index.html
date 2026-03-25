@@ -11,7 +11,6 @@
   <style>
     :root{
       --bg:#06070b;
-      --bg2:#0b0e17;
       --text:#f5f7ff;
       --muted:#b8bfd5;
       --muted2:#8e96ad;
@@ -52,8 +51,16 @@
       opacity:.28;
     }
 
-    img{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
+    img{
+      display:block;
+      max-width:100%;
+      height:auto;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
     .wrap{
       width:min(var(--wrap), calc(100% - 32px));
@@ -102,6 +109,7 @@
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .brand-copy strong{
@@ -129,6 +137,7 @@
       border-radius:999px;
       border:1px solid transparent;
       transition:.18s ease;
+      white-space:nowrap;
     }
 
     .nav a:hover{
@@ -175,6 +184,7 @@
       color:var(--muted);
       font-size:12px;
       margin-bottom:18px;
+      flex-wrap:wrap;
     }
 
     .dot{
@@ -183,6 +193,7 @@
       border-radius:50%;
       background:linear-gradient(135deg, var(--pink), var(--cyan));
       box-shadow:0 0 18px rgba(255,56,199,.65);
+      flex:0 0 auto;
     }
 
     h1{
@@ -220,6 +231,7 @@
       font-size:14px;
       font-weight:600;
       transition:transform .15s ease, border-color .15s ease;
+      text-align:center;
     }
 
     .btn:hover{
@@ -296,6 +308,7 @@
       flex-wrap:wrap;
       justify-content:center;
       width:min(92%, 560px);
+      padding:0 8px;
     }
 
     .pill{
@@ -387,6 +400,7 @@
       font-size:13px;
       font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       white-space:pre-line;
+      overflow:auto;
     }
 
     .visual{
@@ -419,6 +433,7 @@
       border-radius:22px;
       background:rgba(13,16,28,.86);
       padding:16px;
+      min-width:0;
     }
 
     .board-card strong{
@@ -489,12 +504,30 @@
       .footer{
         grid-template-columns:1fr;
       }
+
       .moment.reverse .copy,
-      .moment.reverse .visual{order:initial}
-      .copy h2{max-width:none}
+      .moment.reverse .visual{
+        order:initial;
+      }
+
+      .copy h2{
+        max-width:none;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-visual{
+        min-height:460px;
+      }
     }
 
     @media (max-width:760px){
+      .wrap{
+        width:min(var(--wrap), calc(100% - 20px));
+      }
+
       .topbar-inner{
         min-height:auto;
         flex-direction:column;
@@ -511,6 +544,10 @@
         height:64px;
       }
 
+      .brand-copy strong{
+        font-size:17px;
+      }
+
       .hero,
       .moment,
       .footer{
@@ -518,21 +555,36 @@
       }
 
       h1{
-        font-size:clamp(2.7rem, 13vw, 4.4rem);
+        font-size:clamp(2.5rem, 13vw, 4.3rem);
         max-width:none;
       }
 
+      .hero-copy{
+        font-size:15px;
+      }
+
       .hero-visual{
-        min-height:380px;
+        min-height:360px;
       }
 
       .hero-stage{
-        width:min(100%, 430px);
+        width:min(100%, 420px);
       }
 
       .main-logo{
-        width:min(50%, 180px);
+        width:min(52%, 180px);
         border-radius:24px;
+      }
+
+      .caption-strip{
+        width:min(94%, 360px);
+        gap:8px;
+        bottom:12px;
+      }
+
+      .pill{
+        font-size:11px;
+        padding:8px 10px;
       }
 
       .visual{
@@ -541,10 +593,66 @@
 
       .visual-board{
         min-height:300px;
+        padding:16px;
       }
 
       .split{
         grid-template-columns:1fr;
+      }
+
+      .copy h2{
+        font-size:clamp(1.9rem, 9vw, 3rem);
+      }
+
+      .copy p,
+      .quote{
+        font-size:14px;
+      }
+
+      .cta-row{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .footer{
+        gap:24px;
+      }
+    }
+
+    @media (max-width:480px){
+      .brand{
+        align-items:flex-start;
+      }
+
+      .eyebrow{
+        font-size:11px;
+      }
+
+      h1{
+        font-size:clamp(2.2rem, 12vw, 3.5rem);
+      }
+
+      .hero-stage{
+        width:min(100%, 340px);
+      }
+
+      .main-logo{
+        width:min(54%, 150px);
+      }
+
+      .caption-strip{
+        width:min(96%, 300px);
+      }
+
+      .board-card{
+        padding:14px;
+      }
+
+      .mono{
+        font-size:12px;
       }
     }
   </style>
@@ -695,7 +803,7 @@
                 </div>
                 <div class="board-card">
                   <strong>Hide-and-seek pursuit</strong>
-                  <p>One player hides, another searches, and viewers influence the chase through route suggestions, pressure, or helpful guidance in real time.</p>
+                  <p>One player hides, another searches, and viewers influence the chase through route suggestions, pressure, or helpful guidance in real time, while switching POVs so they never miss the action.</p>
                 </div>
               </div>
               <div class="board-card">
@@ -816,7 +924,7 @@ Email: support@ultimatum.com</div>
               </div>
               <div class="board-card">
                 <strong>Public links</strong>
-                <p>TikTok: https://www.tiktok.com/@playultimatum6?_r=1&_t=ZT-940id0ujIas.</p>
+                <p>Add your App Store links and public social links here as they go live.</p>
               </div>
             </div>
           </div>
