@@ -1,13 +1,70 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Ultimatum</title>
-    <script>
-      const path = window.location.pathname + window.location.search + window.location.hash;
-      sessionStorage.setItem("redirectPath", path);
-      window.location.replace("/");
-    </script>
-  </head>
-  <body></body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Ultimatum</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#15141a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Ultimatum home"><img src="/logo.png" alt="Ultimatum" width="85" height="30"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="/#flow">How it works</a>
+        <a href="/#examples">Ways to play</a>
+        <a href="/#shops">Businesses</a>
+        <a href="/#faq">FAQ</a>
+        <a class="button button--small get-app" href="/#get">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page missing">
+    <div class="wrap">
+      <h1>This page doesn't exist</h1>
+      <p>The link may be old or mistyped. Everything about Ultimatum is on the homepage.</p>
+      <a class="button" href="/">Go to the homepage</a>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <img src="/logo.png" alt="Ultimatum" width="96" height="34">
+          <p>Made by Innovision Entertainment LLC.<br>Questions or press: <a class="link" href="mailto:support@ultimatum.com">support@ultimatum.com</a></p>
+        </div>
+        <div>
+          <h2>Get the app</h2>
+          <ul class="badges">
+            <li><a class="store" href="https://apps.apple.com/us/app/ultimatum-challenges/id6443896103" target="_blank" rel="noopener"><img src="/badges/app-store.svg" alt="Download on the App Store" width="120" height="40"></a></li>
+            <li><a class="store" href="https://play.google.com/store/apps/details?id=com.ultimatum" target="_blank" rel="noopener"><img src="/badges/google-play.png" alt="Get it on Google Play" width="135" height="40"></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Follow</h2>
+          <ul>
+            <li><a class="social" href="https://www.tiktok.com/@playultimatum6" target="_blank" rel="noopener"><img src="/tiktok-icon.png" alt="" width="20" height="20">TikTok</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">© 2026 Innovision Entertainment LLC</p>
+      <p class="credits">Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </footer>
+</body>
 </html>

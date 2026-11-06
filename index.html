@@ -1,22 +1,351 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ultimatum — Interactive Entertainment</title>
-    <meta name="description" content="Creator-led live entertainment with real-time voting, multi-POV viewing, and audience influence." />
-    <meta name="author" content="Innovision Entertainment LLC" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ultimatum: real-world dares, judged by the crowd</title>
+  <meta name="description" content="Take on a challenge, film it, and the people watching vote pass or fail. Free to watch and free to play.">
+  <meta name="author" content="Innovision Entertainment LLC">
+  <meta name="theme-color" content="#15141a">
 
-    <meta property="og:title" content="Ultimatum — Interactive Entertainment" />
-    <meta property="og:description" content="Creator-led live entertainment with real-time voting, multi-POV viewing, and audience influence." />
-    <meta property="og:type" content="website" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://playultimatum.us/">
+  <meta property="og:title" content="Ultimatum: real-world dares, judged by the crowd">
+  <meta property="og:description" content="Take on a challenge, film it, and the people watching vote pass or fail.">
+  <meta property="og:image" content="https://playultimatum.us/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" crossorigin src="/assets/index-G11WkAMI.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Da8zRV7x.css">
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <body>
-    <div id="root"></div>
-  </body>
+  <header class="site-header sign-in-view">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Ultimatum home"><img src="/logo.png" alt="Ultimatum" width="85" height="30"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#flow">How it works</a>
+        <a href="#examples">Ways to play</a>
+        <a href="#shops">Businesses</a>
+        <a href="#faq">FAQ</a>
+        <a class="button button--small get-app" href="#get">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="wrap">
+        <img class="sign" src="/logo.png" alt="Ultimatum" width="780" height="275">
+        <h1><span>Create.</span> <span>Challenge.</span> <span>Go live.</span></h1>
+        <p class="lead">
+          <span class="dares" aria-hidden="true"><span class="dare is-on">“Sing opera to a stranger.”</span></span>
+          <span class="sr-only">Dares like singing opera to a stranger, juggling three oranges or picking up 50 pieces of trash.</span>
+          <span class="verdict">The crowd votes <span class="vote">pass</span> or <span class="vote">fail</span></span>
+        </p>
+        <div class="downloads" id="get">
+          <a class="button" href="https://apps.apple.com/us/app/ultimatum-challenges/id6443896103" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download for iPhone
+          </a>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.ultimatum" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download for Android
+          </a>
+        </div>
+        <p class="fine">Free to watch and free to play.</p>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="flow">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li>
+            <h3>Pick a challenge</h3>
+            <p>Take one from the feed, write your own, or accept one someone sends you.</p>
+          </li>
+          <li>
+            <h3>Do it on camera</h3>
+            <p>Film it or go live from wherever you are. Some challenges run on a clock.</p>
+          </li>
+          <li>
+            <h3>Get the verdict</h3>
+            <p>The crowd votes pass or fail, or the person who challenged you makes the call.</p>
+          </li>
+        </ol>
+        <p class="aside"><strong>Watching counts too.</strong> Viewers vote while it happens, back the players they like, and can send new challenges in the middle of a run.</p>
+      </div>
+    </section>
+
+    <!-- Ways to play -->
+    <section class="section" id="examples">
+      <div class="wrap">
+        <h2>Ways to play</h2>
+        <p class="intro">A few formats creators can run. Tap one to see how a round goes.</p>
+        <ul class="plays">
+          <li><button class="play" type="button" data-open="round-hunt">
+            <h3>Scavenger hunt</h3>
+            <p>Set a spot on the map, a radius and a countdown. Viewers vote on which clue drops next.</p>
+            <span class="open">How a round goes</span>
+          </button></li>
+          <li><button class="play" type="button" data-open="round-choice">
+            <h3>Crowd's choice</h3>
+            <p>Post three options, the crowd votes, and you do whichever one wins, live.</p>
+            <span class="open">How a round goes</span>
+          </button></li>
+          <li><button class="play" type="button" data-open="round-seek">
+            <h3>Hide-and-seek</h3>
+            <p>One hides, one searches. Viewers switch between both cameras and vote on hints.</p>
+            <span class="open">How a round goes</span>
+          </button></li>
+          <li><button class="play" type="button" data-open="round-tag">
+            <h3>City tag</h3>
+            <p>Tag across a whole neighborhood. Viewers back their player and vote on where safe zones drop.</p>
+            <span class="open">How a round goes</span>
+          </button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- For businesses -->
+    <section class="section" id="shops">
+      <div class="wrap">
+        <h2>Make your place the finish line.</h2>
+        <p class="intro">For cafés, restaurants, stores and venues. A creator pins your location, people nearby race to get there, and the whole thing streams live.</p>
+
+        <div class="tabs" role="tablist" aria-label="Business types">
+          <button class="tab" role="tab" id="tab-cafe" aria-controls="panel-cafe" aria-selected="true">Café</button>
+          <button class="tab" role="tab" id="tab-restaurant" aria-controls="panel-restaurant" aria-selected="false" tabindex="-1">Restaurant</button>
+          <button class="tab" role="tab" id="tab-store" aria-controls="panel-store" aria-selected="false" tabindex="-1">Store</button>
+          <button class="tab" role="tab" id="tab-venue" aria-controls="panel-venue" aria-selected="false" tabindex="-1">Venue</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-cafe" aria-labelledby="tab-cafe">
+          <h3>Code word rush</h3>
+          <p>A creator pins your café. People within half a mile have 15 minutes to get there and say the code word to the barista. The first 10 are in; everyone else watches.</p>
+          <ol class="beats">
+            <li>The creator pins your café on the map</li>
+            <li>The zone locks to half a mile</li>
+            <li>A 15-minute countdown starts</li>
+            <li>The first 10 to say the word are in</li>
+          </ol>
+          <blockquote class="example">"Get to the café on 4th St and tell the barista the code word before the timer runs out. Ten spots."</blockquote>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-restaurant" aria-labelledby="tab-restaurant" hidden>
+          <h3>Wing showdown</h3>
+          <p>Team up with a creator for a live food challenge. Viewers vote on the heat level and players race the clock.</p>
+          <ol class="beats">
+            <li>Your restaurant goes live with a creator</li>
+            <li>Players take their seats</li>
+            <li>Viewers pick mild, hot or extreme</li>
+            <li>Six wings before the buzzer</li>
+          </ol>
+          <blockquote class="example">"Six wings, three minutes, and the crowd picked the hottest sauce on the menu."</blockquote>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-store" aria-labelledby="tab-store" hidden>
+          <h3>Style battle</h3>
+          <p>Your store floor becomes the stage. Players build a full outfit under budget in five minutes, and viewers vote on the best look.</p>
+          <ol class="beats">
+            <li>Your store goes live</li>
+            <li>Players pick items under $50</li>
+            <li>Five minutes to put a look together</li>
+            <li>Viewers pick the winner</li>
+          </ol>
+          <blockquote class="example">"Head-to-toe look, under $50, in five minutes. The crowd decides who wins."</blockquote>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-venue" aria-labelledby="tab-venue" hidden>
+          <h3>First through the door</h3>
+          <p>Drop a live pin and people nearby race to your door. The first five get pulled into a live challenge the viewers choose.</p>
+          <ol class="beats">
+            <li>Your venue drops a pin</li>
+            <li>One-mile zone, and the clock starts</li>
+            <li>The first five through the door are in</li>
+            <li>Viewers pick their challenge</li>
+          </ol>
+          <blockquote class="example">"First five through the door sing karaoke live. The crowd picks the song."</blockquote>
+        </div>
+
+        <div class="business-cta">
+          <a class="button button--ghost" href="mailto:support@ultimatum.com?subject=Business%20challenge">Email us to set one up</a>
+          <p>Tell us your business and city, and we'll help you plan the first one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <span class="anchor" id="support"></span>
+      <div class="wrap">
+        <h2>Questions</h2>
+        <div class="faq">
+          <details name="faq">
+            <summary>Is Ultimatum free?</summary>
+            <p>Yes. Watching, browsing and taking part in challenges are free. There's no entry fee and no subscription.</p>
+          </details>
+          <details name="faq">
+            <summary>How do creators make money?</summary>
+            <p>Through optional support from viewers. Fans can send support to creators they like, but it's never required to watch or play.</p>
+          </details>
+          <details name="faq">
+            <summary>Is this gambling?</summary>
+            <p>No. There's no betting, no entry fees and no prize pools. Votes decide how a challenge plays out, not who wins money.</p>
+          </details>
+          <details name="faq">
+            <summary>What isn't allowed?</summary>
+            <p>Pornography, explicit content, gambling and anything illegal. Anyone can report a video, and we review reports and remove anything that breaks the rules.</p>
+          </details>
+          <details name="faq">
+            <summary>How does voting work?</summary>
+            <p>While a challenge is live, viewers vote on what happens next and whether the player passed or failed. Votes count in real time.</p>
+          </details>
+          <details name="faq">
+            <summary>Can my business use Ultimatum?</summary>
+            <p>Yes. A café, restaurant, store or venue can be the location for a challenge, which brings nearby people through your door. <a class="link" href="mailto:support@ultimatum.com?subject=Business%20challenge">Email us</a> to set one up.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <img src="/logo.png" alt="Ultimatum" width="96" height="34">
+          <p>Made by Innovision Entertainment LLC.<br>Questions or press: <a class="link" href="mailto:support@ultimatum.com">support@ultimatum.com</a></p>
+        </div>
+        <div>
+          <h2>Get the app</h2>
+          <ul class="badges">
+            <li><a class="store" href="https://apps.apple.com/us/app/ultimatum-challenges/id6443896103" target="_blank" rel="noopener"><img src="/badges/app-store.svg" alt="Download on the App Store" width="120" height="40"></a></li>
+            <li><a class="store" href="https://play.google.com/store/apps/details?id=com.ultimatum" target="_blank" rel="noopener"><img src="/badges/google-play.png" alt="Get it on Google Play" width="135" height="40"></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Follow</h2>
+          <ul>
+            <li><a class="social" href="https://www.tiktok.com/@playultimatum6" target="_blank" rel="noopener"><img src="/tiktok-icon.png" alt="" width="20" height="20">TikTok</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">© 2026 Innovision Entertainment LLC</p>
+      <p class="credits">Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </footer>
+
+  <!-- Pop-ups for "Ways to play" -->
+  <dialog class="round" id="round-hunt" aria-labelledby="round-hunt-title">
+    <div class="round-inner">
+      <div class="round-head"><h3 id="round-hunt-title">Scavenger hunt</h3><form method="dialog"><button class="close" aria-label="Close">×</button></form></div>
+      <p class="setup">The creator sets the location to downtown, locks the zone to half a mile, and gives players 30 minutes.</p>
+      <h4>How a round goes</h4>
+      <ol class="beats">
+        <li><span><b>Challenge:</b> "Find the mural on 5th Ave and take a photo with it."</span></li>
+        <li><span><b>Vote:</b> viewers pick where the next clue is.</span></li>
+        <li><span><b>Challenge:</b> "Run to the fountain and say the code phrase to the person in the red hat."</span></li>
+        <li><span><b>Vote:</b> did they make it? Pass or fail.</span></li>
+      </ol>
+      <h4>What the creator sets</h4>
+      <dl class="controls">
+        <div><dt>Location</dt><dd>Any spot on the map</dd></div>
+        <div><dt>Time limit</dt><dd>How long players have</dd></div>
+        <div><dt>Votes</dt><dd>What the crowd gets to decide</dd></div>
+        <div><dt>Support</dt><dd>Viewers can back the players they like</dd></div>
+      </dl>
+      <h4>What viewers do</h4>
+      <p>Vote on which clue drops next and whether each player passed or failed, and send support to the players you're rooting for.</p>
+      <blockquote class="example">"Find the gold envelope hidden near the old market. The crowd picks your next clue in 60 seconds."</blockquote>
+    </div>
+  </dialog>
+
+  <dialog class="round" id="round-choice" aria-labelledby="round-choice-title">
+    <div class="round-inner">
+      <div class="round-head"><h3 id="round-choice-title">Crowd's choice</h3><form method="dialog"><button class="close" aria-label="Close">×</button></form></div>
+      <p class="setup">A creator goes live in a busy park with three options ready. Whatever the crowd picks, they do on the spot. Then the next round starts.</p>
+      <h4>How a round goes</h4>
+      <ol class="beats">
+        <li><span><b>Challenge:</b> the creator posts three options.</span></li>
+        <li><span><b>Vote:</b> "Sing opera to a stranger" wins.</span></li>
+        <li><span><b>Challenge:</b> the creator does it, live.</span></li>
+        <li><span><b>Vote:</b> pass or fail, then three new options.</span></li>
+      </ol>
+      <h4>What the creator sets</h4>
+      <dl class="controls">
+        <div><dt>Options</dt><dd>Any challenges they want to offer</dd></div>
+        <div><dt>Location</dt><dd>Where they go live</dd></div>
+        <div><dt>Time limit</dt><dd>How long each one gets</dd></div>
+        <div><dt>Support</dt><dd>Viewers can back the creator</dd></div>
+      </dl>
+      <h4>What viewers do</h4>
+      <p>Pick what they do. The creator doesn't know which option wins until voting closes. After each one, you vote pass or fail.</p>
+      <blockquote class="example">"Option A: sing opera to a stranger. Option B: ask someone to slow dance. Option C: give a one-minute pep talk from a park bench. Voting is open."</blockquote>
+    </div>
+  </dialog>
+
+  <dialog class="round" id="round-seek" aria-labelledby="round-seek-title">
+    <div class="round-inner">
+      <div class="round-head"><h3 id="round-seek-title">Hide-and-seek</h3><form method="dialog"><button class="close" aria-label="Close">×</button></form></div>
+      <p class="setup">Two players, a four-block zone and a 20-minute clock. Viewers can switch between both players' cameras the whole time.</p>
+      <h4>How a round goes</h4>
+      <ol class="beats">
+        <li><span><b>Challenge:</b> "Hider, you have 3 minutes to disappear."</span></li>
+        <li><span><b>Vote:</b> should the seeker get a hint?</span></li>
+        <li><span><b>Challenge:</b> "Seeker, check the alley on 3rd Ave." (the hint the crowd unlocked)</span></li>
+        <li><span><b>Vote:</b> found in time? The crowd decides.</span></li>
+      </ol>
+      <h4>What the creator sets</h4>
+      <dl class="controls">
+        <div><dt>Zone</dt><dd>Where the game can go</dd></div>
+        <div><dt>Time limit</dt><dd>How long the chase runs</dd></div>
+        <div><dt>Votes</dt><dd>Hints and the final call</dd></div>
+        <div><dt>Support</dt><dd>Viewers can back either player</dd></div>
+      </dl>
+      <h4>What viewers do</h4>
+      <p>Watch both sides, vote on hints and the final call, and back the hider or the seeker.</p>
+      <blockquote class="example">"The seeker is two blocks away and the hider just ducked into an alley. Reveal the hider's street? Vote now."</blockquote>
+    </div>
+  </dialog>
+
+  <dialog class="round" id="round-tag" aria-labelledby="round-tag-title">
+    <div class="round-inner">
+      <div class="round-head"><h3 id="round-tag-title">City tag</h3><form method="dialog"><button class="close" aria-label="Close">×</button></form></div>
+      <p class="setup">Four players, a two-mile zone, and one player is it. The creator sets the rules, the area and the time.</p>
+      <h4>How a round goes</h4>
+      <ol class="beats">
+        <li><span><b>Challenge:</b> "Everyone scatter. The tagger is released in 2 minutes."</span></li>
+        <li><span><b>Vote:</b> where should a safe zone drop?</span></li>
+        <li><span><b>Challenge:</b> a safe zone opens on Main St for 3 minutes.</span></li>
+        <li><span><b>Vote:</b> Player 3 got tagged. Was it clean?</span></li>
+      </ol>
+      <h4>What the creator sets</h4>
+      <dl class="controls">
+        <div><dt>Zone</dt><dd>The full play area</dd></div>
+        <div><dt>Time limit</dt><dd>How long the game runs</dd></div>
+        <div><dt>Votes</dt><dd>Safe zones and disputed tags</dd></div>
+        <div><dt>Support</dt><dd>Each player's fans can back them</dd></div>
+      </dl>
+      <h4>What viewers do</h4>
+      <p>Back your player, vote on where safe zones appear, and settle disputed tags.</p>
+      <blockquote class="example">"The tagger is closing in on Player 3, but the crowd just dropped a safe zone on Main St. Will they make it?"</blockquote>
+    </div>
+  </dialog>
+</body>
 </html>
