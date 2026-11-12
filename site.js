@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 
-  // Rotating game moments under the headline: 20 lines in random order, a new one
+  // Rotating game moments under the headline: 24 lines in random order, a new one
   // every few seconds. Pauses only while it's off screen or the tab is hidden, and
   // stays on the first dare if the visitor asked their phone for less motion.
   const DARES = [
@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "Outrun the tagger to Main St.", "Six wings before the buzzer.", "Build a look under $50.",
     "Be first through the door.", "Sing the song the crowd picked.", "Find the hider in 20 minutes.",
     "Cross the park without a tag.", "Crack the last clue.", "Get to the finish line first.",
-    "Survive the final two minutes.", "Do what the crowd voted for."
+    "Survive the final two minutes.", "Do what the crowd voted for.",
+    "Ten minutes alone in the attic.", "Explore the mall by flashlight.", "Open the door the crowd picked.",
+    "Stay till the candle burns out."
   ];
   const slot = document.querySelector(".dares");
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
