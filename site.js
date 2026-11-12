@@ -32,27 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 
-  // Rotating dares under the headline: 50 challenges in random order, a new one
+  // Rotating game moments under the headline: 20 lines in random order, a new one
   // every few seconds. Pauses only while it's off screen or the tab is hidden, and
   // stays on the first dare if the visitor asked their phone for less motion.
   const DARES = [
-    "Sing opera to a stranger.", "Eat six wings in 3 minutes.", "Stay hidden for 20 minutes.",
-    "Find the gold envelope.", "Moonwalk across the mall.", "Beatbox for a full minute.",
-    "Speak only in rhymes.", "50 pushups, no stopping.", "Freestyle about a pigeon.",
-    "Learn a dance in 10 minutes.", "High-five 20 strangers.", "Start a slow clap.",
-    "Draw someone's portrait.", "Juggle three oranges.", "Order your coffee in song.",
-    "Get a stranger to dance.", "Narrate the bus ride.", "Hold a plank for 3 minutes.",
-    "Sell a pet rock for $1.", "Compliment 10 people.", "Eat a lemon. Don't flinch.",
-    "Read poetry at the bus stop.", "Make a stranger laugh.", "Build a cardboard throne.",
-    "Cook dinner with $5.", "Paint with your feet.", "Run a mile in a costume.",
-    "Hula hoop for 5 minutes.", "Name 20 flags in a minute.", "Talk like a pirate all day.",
-    "Find a four-leaf clover.", "Skip across the whole park.", "Invent a secret handshake.",
-    "Make up a song about tacos.", "Recreate a famous photo.", "Dance in the rain.",
-    "Start a sing-along.", "Say hi in 10 languages.", "Build a sandcastle tower.",
-    "Wear your clothes backwards.", "Draw a map from memory.", "3 crackers, then whistle.",
-    "Win a thumb war.", "Fly a paper plane 50 feet.", "Find your birthday twin.",
-    "Pitch a silly invention.", "Say the ABCs backwards.", "Stack 10 cups in 10 seconds.",
-    "Pick up 50 pieces of trash.", "Be a statue for 5 minutes."
+    "Stay hidden for 20 minutes.", "Tag all four players downtown.", "Find the gold envelope.",
+    "Reach the safe zone in time.", "Solve three clues in 30 minutes.", "Be first to the fountain.",
+    "Escape the seeker for 10 blocks.", "Say the code word at the café.", "Find the mural on 5th Ave.",
+    "Outrun the tagger to Main St.", "Six wings before the buzzer.", "Build a look under $50.",
+    "Be first through the door.", "Sing the song the crowd picked.", "Find the hider in 20 minutes.",
+    "Cross the park without a tag.", "Crack the last clue.", "Get to the finish line first.",
+    "Survive the final two minutes.", "Do what the crowd voted for."
   ];
   const slot = document.querySelector(".dares");
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
